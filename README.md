@@ -11,3 +11,4 @@
 - Subimos los cambios al repo remoto ( git push )
 
 ~ Un cambio aleatorio ~
+**Recordemos siempre estar comunicados en lo que refiere a cambios**
