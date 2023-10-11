@@ -9,3 +9,4 @@
 - Empaquetamos los cambios ( git commit -m "mensaje" )
 - Bajamos los cambios remotos ( git pull [rama] )
 - Subimos los cambios al repo remoto ( git push )
+**Recordemos siempre estar comunicados en lo que refiere a cambios**
