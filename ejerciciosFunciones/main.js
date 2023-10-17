@@ -27,7 +27,7 @@ function testIf(number) {
   }*/
 
   switch (number) {
-    case 10:
+    case number > 10:
       console.log("ganaste 10 puntos");
       break;
     case 5:
@@ -42,4 +42,24 @@ function testIf(number) {
   }
 }
 
-testIf(10);
+testIf(19);
+
+/* 
+    Vamos a crear un consejero de nombre para mi mascota, este consejero necesita saber qué especie es tu mascota (perro, gato, ave) y ofrecer el siguiente nombre
+        perro -> Milaneso
+        gato -> Michiflais
+        ave -> Piolín
+
+    si la especie no es conocida por el consejero, nos debe decir que no conoce esa especie
+*/
+
+/*
+    tenemos un calculador de dados. Este calculador requiere saber los puntos que obtuviste en cada dado ( considerando dos dados). Una vez que le digas los números te debe avisar si ganaste o perdiste considerando las siguientes combinaciones ganadoras:
+
+    2,2
+    4,6
+    1,1
+
+    cualquier otra combinación se considera perdedora
+    los dados sólo tienen puntos del 1 al 6
+*/
