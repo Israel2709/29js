@@ -63,3 +63,100 @@ testIf(19);
     cualquier otra combinación se considera perdedora
     los dados sólo tienen puntos del 1 al 6
 */
+
+function suggestName(specie) {
+  switch (specie) {
+    case "Gato":
+      return "Michiflais";
+    case "Perro":
+      return "Milaneso";
+    case "Ave":
+      return "Piolín";
+    default:
+      return "No conozco esa especie";
+  }
+}
+
+let name1 = suggestName("Perro");
+let name2 = suggestName("Gato");
+let name3 = suggestName("Ave");
+let name4 = suggestName("Pez");
+
+console.log(name1, name2, name3, name4);
+
+function evaluateDiceThrow(num1, num2) {
+  if (
+    (num1 === 2 && num2 === 2) ||
+    (num1 === 4 && num2 === 6) ||
+    (num1 === 6 && num2 === 4) ||
+    (num1 === 1 && num2 === 1)
+  ) {
+    return "Sos un ganador";
+  } else {
+    return "Suerte para la próxima";
+  }
+}
+
+evaluateDiceThrow(2, 2);
+
+function x() {
+  let evenWord;
+  let oddWord;
+
+  return `La palabra con nones es {oddWord} y la palabra con pares es {evenWord}`;
+}
+
+/*function isAdult(age){
+  if( age >= 18){
+    return "is Adult"
+  } else {
+    return "Is not adult"
+  }
+}*/
+
+function isAdult(age) {
+  return age >= 18 ? "is Adult" : "Is not adult";
+}
+
+function isEven(number) {
+  return number % 2 === 0 ? "Is Even" : "Is odd";
+}
+
+function saludarConNombre(nombre) {
+  return `Hola, soy ${nombre}`;
+}
+
+function saludarSinNombre() {
+  return `Hola sin nombre`;
+}
+
+function saludarGeneral(nombre) {
+  let textoDeSaludo = nombre ? saludarConNombre(nombre) : saludarSinNombre();
+}
+
+console.log(saludarGeneral("Isra"));
+console.log(saludarGeneral());
+
+let text = "onomatopeya";
+console.log(text.length);
+
+for (let i = 0; i <= 3; i++) {
+  console.log(`Estamos en ${i}`);
+}
+
+function createWords(text) {
+  let charCount = text.length;
+  let oddWord = ""; //para los nones
+  let evenWord = ""; //para los pares
+
+  for (let i = 0; i <= charCount; i++) {
+    //str.charAt(5)
+    let currentChar = text.charAt(i);
+
+    i % 2 !== 0 ? (oddWord += currentChar) : (evenWord += currentChar);
+  }
+  console.log("con nones", oddWord);
+  console.log("con pares", evenWord);
+}
+
+createWords("gato");
