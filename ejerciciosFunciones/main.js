@@ -160,3 +160,45 @@ function createWords(text) {
 }
 
 createWords("gato");
+
+/*
+  - Crear una función que reciba un texto, y un número, si el número excede la cantidad de caracteres del texto, devolver un mensaje de error
+  si el número no excede la cantidad de caracteres, devolver un string que contenga los caracteres desde 0 hasta el número indicado
+  Israel, 3
+  -> Isra
+
+  - Teniendo el texto: "La mejor forma de predecir el futuro es creándolo"
+    crear una función que me devuelva la cantidad de palabras cuya longitud sea par, y la cantidad de palabras cuya longitud sea non.
+    
+    -pares: 6
+    -nones: 3
+
+  .split
+  */
+
+function getSubstring(txt, finalIndex) {
+  let result =
+    txt.length > finalIndex
+      ? txt.substring(0, finalIndex)
+      : "El texto es más pequeño que el número indicado";
+  return result;
+}
+
+let substringTest = getSubstring("cualquier otra cosa", 50);
+console.log(substringTest);
+
+function getSquareArea(base, height) {
+  let area = base * height;
+  return area;
+}
+
+function adultCounter(personsArray) {
+  let adults = 0;
+  for (let i = 0; i < personsArray.length; i++) {
+    let age = personsArray[i].age;
+    if (age > 18) {
+      adults += 1;
+    }
+  }
+  return adults;
+}
