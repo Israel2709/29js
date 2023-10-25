@@ -271,3 +271,21 @@ let products = [
     1.- Necesitamos conocer el precio promedio de los productos de esta lista.
     2.- Necesitamos saber qué productos de la lista sí puedo comprar, y que productos no, contando con n cantidad de dinero
 */
+
+const getAveragePrice = (productsArray) => {
+  let totalPrice = 0;
+  productsArray.forEach((product) => (totalPrice += product.price));
+  let average = totalPrice / productsArray.length;
+  return average;
+};
+
+const canIbuy = (productsArray, money) => {
+  productsArray.forEach((product) => {
+    let { price, title } = product;
+    let text =
+      price <= money
+        ? `${title} si lo puedes comprar`
+        : `${title} no lo puedes comprar`;
+    console.log(text);
+  });
+};
