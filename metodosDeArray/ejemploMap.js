@@ -313,3 +313,48 @@ let products = [
 2.- crear una nueva lista que contenga únicamente los nombres de todos los productos
 3.- crear una nueva lista que contenga los productos con su descripción limitada a 10 palabras
 */
+
+const modifyPrices = (productsArray) => {
+  let result = productsArray.map((product) => ({
+    ...product,
+    price: product.price * 18.35,
+  }));
+  return result;
+};
+
+let newList = modifyPrices(products);
+//console.log(newList);
+
+const createNamesList = (productsArray) => {
+  let result = productsArray.map((product) => product.title);
+  return result;
+};
+
+let titlesList = createNamesList(products);
+//console.log(titlesList);
+
+const shortenDescription = (description) => {
+  let descriptionArray = description.split(" ");
+  let shortenArray = [];
+  for (let i = 0; i < 20; i++) {
+    shortenArray.push(descriptionArray[i]);
+  }
+  let shortDescription = shortenArray.join(" ");
+  return shortDescription;
+};
+
+const createListWithShortDescription = (productsArray) =>
+  productsArray.map((product) => ({
+    ...product,
+    description: product.description.split(" ").slice(0, 20).join(" "),
+  }));
+
+let shortenList = createListWithShortDescription(products);
+console.log(shortenList);
+
+let test = ["a", "l", "s", "d"];
+console.log(test.slice(1, 3));
+
+let testString = "lo esencial es invisible para los ojos";
+
+console.log(testString.split(" ", 4).join(" "));
