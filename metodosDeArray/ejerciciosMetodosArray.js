@@ -280,3 +280,60 @@ let users = [
     - address ( calle, número, ciudad, estado, país, código postal)
                 "san simón 45, azcapotzalco, CDMX, México, 02020"
 */
+
+const getUserByNat = (nationality, usersArray) => {
+  let result = usersArray.filter((user) => user.nat === nationality);
+  return result;
+};
+
+const getSingleCountries = (usersArray) => {
+  let result = usersArray.reduce((accum, current) =>
+    accum.contains(current) ? accum : [...accum, current]
+  );
+  return result;
+};
+
+const filterByGender = (usersArray, gender) => {
+  let result = usersArray.filter((user) => user.gender === gender);
+  return result;
+};
+
+/*{
+    gender: "female",
+    name: {
+      title: "Ms",
+      first: "Kerttu",
+      last: "Ylitalo",
+    },
+    location: {
+      street: {
+        number: 9661,
+        name: "Hämeentie",
+      },
+      city: "Kaskinen",
+      state: "Satakunta",
+      country: "Finland",
+      postcode: 63053,
+      coordinates: {
+        latitude: "-5.7779",
+        longitude: "81.8230",
+      },
+      timezone: {
+        offset: "+11:00",
+        description: "Magadan, Solomon Islands, New Caledonia",
+      },
+    },
+    nat: "FI",
+
+    address ( calle, número, ciudad, estado, país, código postal)
+  },*/
+const recreateUsers = (usersArray) => {
+  let result = usersArray.map((user) => {
+    let { name, location } = user;
+    return {
+      fullname: `${name.first} ${name.last}`,
+      address: `${location.street.name} ${location.street.number} ${location.city} ${location.state} ${location.country} ${location.postcode}`,
+    };
+  });
+  return result;
+};
