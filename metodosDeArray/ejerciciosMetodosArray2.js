@@ -912,3 +912,31 @@ let users = [
 7.- Indicar la edad promedio de los usuarios en la lista
 8.- Crear una lista que agrupe a los usuarios por género (una lista para masculinos, una para femeninos)
 */
+
+const passValidator = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}$/;
+let mypass = "Myawesomepassword1";
+
+console.log(passValidator.test(mypass));
+
+const getInvalidPass = (usersArray) => {
+  let result = usersArray.filter(
+    (user) => !passValidator.test(user.login.password)
+  );
+  return result;
+};
+
+let invalidPassUsers = getInvalidPass(users);
+console.log(invalidPassUsers);
+
+const getUniqueCountries = (usersArray) => {
+  let result = usersArray.reduce((countriesList, user) => {
+    return countriesList.includes(user.location.country)
+      ? countriesList
+      : [...countriesList, user.location.country];
+  }, []);
+  console.log(result);
+};
+
+let uniqueCountries = getUniqueCountries(users);
+
+console.log(uniqueCountries);

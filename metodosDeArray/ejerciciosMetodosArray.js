@@ -287,8 +287,9 @@ const getUserByNat = (nationality, usersArray) => {
 };
 
 const getSingleCountries = (usersArray) => {
-  let result = usersArray.reduce((accum, current) =>
-    accum.contains(current) ? accum : [...accum, current]
+  let result = usersArray.reduce(
+    (accum, current) => (accum.contains(current) ? accum : [...accum, current]),
+    []
   );
   return result;
 };

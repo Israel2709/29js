@@ -1,0 +1,12 @@
+* {
+  font-family: arial;
+  box-sizing: border-box;
+}
+
+.bg-peru {
+  background-color: peru;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
