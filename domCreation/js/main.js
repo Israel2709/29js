@@ -180,6 +180,11 @@ const createUserCard = (userData) => {
   cardButton.setAttribute("href", "#");
   cardButton.innerText = "Go somewhere";
 
+  let checkbox = document.createElement("input");
+  checkbox.setAttribute("type", "checkbox");
+  checkbox.checked = true;
+  console.log(checkbox);
+
   cardBody.append(cardTitle, cardButton);
 
   userCard.append(userImage, cardBody);
@@ -195,7 +200,7 @@ const printUserCard = (userData) => {
 };
 
 const printAllUsers = (usersList) => {
-  let usersWrapper = document.getElementById("users-wrapper");
+  //let usersWrapper = document.getElementById("users-wrapper");
   usersWrapper.innerHTML = "";
   usersList.forEach((user) => {
     printUserCard(user);
