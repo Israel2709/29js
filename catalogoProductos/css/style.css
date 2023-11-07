@@ -1,0 +1,7 @@
+.product-card img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+}/*# sourceMappingURL=style.css.map */
